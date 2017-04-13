@@ -37,7 +37,7 @@ class Url
      */
     public function stringify($server, $secret, $original, $commands)
     {
-        $original = urlencode($original);
+        $original = strtok($original, '?');
 
         if (count($commands) > 0) {
             $commandPath = implode('/', $commands);
